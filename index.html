@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salah Time</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Salah Time</h1>
+      <p>Daily Prayer & Fasting Times</p>
+    </header>
+
+    <!-- City Selection -->
+    <section id="location">
+      <label for="city">Select City:</label>
+      <select id="city">
+
+        <!-- 🇮🇳 India -->
+        <option value="Delhi|India">Delhi</option>
+        <option value="Mumbai|India">Mumbai, Maharashtra</option>
+        <option value="Patna|India">Patna, Bihar</option>
+        <option value="Muzaffarpur|India">Muzaffarpur, Bihar</option>
+        <option value="Hyderabad|India">Hyderabad, Telangana</option>
+        <option value="Bengaluru|India">Bengaluru (Bangalore), Karnataka</option>
+        <option value="Chennai|India">Chennai, Tamil Nadu</option>
+        <option value="Ahmedabad|India">Ahmedabad, Gujarat</option>
+        <option value="Pune|India">Pune, Maharashtra</option>
+        <option value="Jaipur|India">Jaipur, Rajasthan</option>
+        <option value="Surat|India">Surat, Gujarat</option>
+        <option value="Lucknow|India">Lucknow, Uttar Pradesh</option>
+        <option value="Kanpur|India">Kanpur, Uttar Pradesh</option>
+        <option value="Nagpur|India">Nagpur, Maharashtra</option>
+        <option value="Visakhapatnam|India">
+          Visakhapatnam (Vizag), Andhra Pradesh
+        </option>
+        <option value="Indore|India">Indore, Madhya Pradesh</option>
+        <option value="Thiruvananthapuram|India">
+          Thiruvananthapuram, Kerala
+        </option>
+        <option value="Coimbatore|India">Coimbatore, Tamil Nadu</option>
+        <option value="Gurgaon|India">Gurgaon (Gurugram), Haryana</option>
+        <option value="Noida|India">Noida, Uttar Pradesh</option>
+        <option value="Chandigarh|India">Chandigarh</option>
+        <option value="Mysore|India">Mysore, Karnataka</option>
+        <option value="Kolkata|India">Kolkata, West Bengal</option>
+        <option value="Srinagar|India">Srinagar, Jammu and Kashmir</option>
+        <option value="Sheohar|India">Sheohar, Bihar</option>
+
+        <!-- 🌍 International Cities -->
+        <option value="Mecca|Saudi Arabia">Mecca, Saudi Arabia</option>
+        <option value="Medina|Saudi Arabia">Medina, Saudi Arabia</option>
+
+        <option value="Dubai|United Arab Emirates">Dubai, UAE</option>
+        <option value="Abu Dhabi|United Arab Emirates">Abu Dhabi, UAE</option>
+        <option value="Doha|Qatar">Doha, Qatar</option>
+        <option value="Kuwait City|Kuwait">Kuwait City, Kuwait</option>
+        <option value="Muscat|Oman">Muscat, Oman</option>
+        <option value="Manama|Bahrain">Manama, Bahrain</option>
+
+        <option value="Karachi|Pakistan">Karachi, Pakistan</option>
+        <option value="Lahore|Pakistan">Lahore, Pakistan</option>
+        <option value="Dhaka|Bangladesh">Dhaka, Bangladesh</option>
+        <option value="Colombo|Sri Lanka">Colombo, Sri Lanka</option>
+        <option value="Kathmandu|Nepal">Kathmandu, Nepal</option>
+        <option value="Kabul|Afghanistan">Kabul, Afghanistan</option>
+
+        <option value="London|United Kingdom">London, UK</option>
+        <option value="Manchester|United Kingdom">Manchester, UK</option>
+        <option value="Paris|France">Paris, France</option>
+        <option value="Berlin|Germany">Berlin, Germany</option>
+        <option value="Rome|Italy">Rome, Italy</option>
+        <option value="Madrid|Spain">Madrid, Spain</option>
+
+        <option value="New York|United States">New York, USA</option>
+        <option value="Los Angeles|United States">Los Angeles, USA</option>
+        <option value="Toronto|Canada">Toronto, Canada</option>
+        <option value="Vancouver|Canada">Vancouver, Canada</option>
+
+        <option value="Sydney|Australia">Sydney, Australia</option>
+        <option value="Melbourne|Australia">Melbourne, Australia</option>
+        <option value="Auckland|New Zealand">Auckland, New Zealand</option>
+
+        <option value="Tokyo|Japan">Tokyo, Japan</option>
+        <option value="Seoul|South Korea">Seoul, South Korea</option>
+        <option value="Bangkok|Thailand">Bangkok, Thailand</option>
+        <option value="Kuala Lumpur|Malaysia">Kuala Lumpur, Malaysia</option>
+        <option value="Jakarta|Indonesia">Jakarta, Indonesia</option>
+        <option value="Singapore|Singapore">Singapore</option>
+
+        <option value="Cairo|Egypt">Cairo, Egypt</option>
+        <option value="Casablanca|Morocco">Casablanca, Morocco</option>
+        <option value="Johannesburg|South Africa">Johannesburg, South Africa</option>
+
+      </select>
+    </section>
+
+    <!-- Date & Time -->
+    <section id="date-time">
+      <p id="english-date"></p>
+      <p id="islamic-date"></p>
+      <p id="live-time"></p>
+    </section>
+
+    <!-- Prayer Times -->
+    <section id="prayers">
+      <h2>Prayer Times</h2>
+  <ul>
+    <li id="prayer-fajr">
+      Fajr: <span id="fajr">--</span>
+      <small>(Ends: <span id="fajr-end">--</span>)</small>
+    </li>
+
+    <li id="prayer-dhuhr">
+      Dhuhr: <span id="dhuhr">--</span>
+      <small>(Ends: <span id="dhuhr-end">--</span>)</small>
+    </li>
+
+    <li id="prayer-asr">
+      Asr: <span id="asr">--</span>
+      <small>(Ends: <span id="asr-end">--</span>)</small>
+    </li>
+
+    <li id="prayer-maghrib">
+      Maghrib: <span id="maghrib">--</span>
+      <small>(Ends: <span id="maghrib-end">--</span>)</small>
+    </li>
+
+    <li id="prayer-isha">
+      Isha: <span id="isha">--</span>
+      <small>(Ends: <span id="isha-end">--</span>)</small>
+    </li>
+  </ul>
+
+</section>
+
+    </section>
+
+    <!-- Fasting Times -->
+    <section id="fasting">
+      <h2>Fasting Times</h2>
+      <ul>
+        <li>Sehri Starts: <span id="sehri-start">--</span></li>
+        <li>Sehri Ends: <span id="sehri-end">--</span></li>
+        <li>Iftar Time: <span id = "iftar">--</span></li>
+      </ul>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

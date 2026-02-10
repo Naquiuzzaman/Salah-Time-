@@ -1,0 +1,11 @@
+/* ===============================
+   ACTIVE PRAYER HIGHLIGHT
+   =============================== */
+
+.active-prayer {
+  background-color: #e6f4ea;
+  border-left: 6px solid #2e7d32;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+}
