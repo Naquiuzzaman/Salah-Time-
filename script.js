@@ -16,6 +16,18 @@ function timeToMinutes(timeStr) {
 }
 
 // ===============================
+// HELPER: ADD MINUTES TO TIME
+// Used for Nafl prayers (Ishraq, Chasht)
+// ===============================
+
+function addMinutes(timeStr, minutes) {
+  const [h, m] = timeStr.split(":").map(Number);
+  const date = new Date();
+  date.setHours(h, m + minutes, 0, 0);
+  return date.toTimeString().slice(0, 5);
+}
+
+// ===============================
 //  WORLD TIME, ENGLISH DATE, HIJRI DATE
 // ===============================
 
@@ -76,6 +88,8 @@ function highlightCurrentPrayer(timings) {
 
   const nowMinutes = timeToMinutes(currentTime);
 
+  
+
   // Convert prayer times to minutes
   const fajr = timeToMinutes(timings.Fajr);
   const sunrise = timeToMinutes(timings.Sunrise);
@@ -98,12 +112,54 @@ function highlightCurrentPrayer(timings) {
     document.getElementById("prayer-asr").classList.add("active-prayer");
   } else if (nowMinutes >= maghrib && nowMinutes < isha) {
     document.getElementById("prayer-maghrib").classList.add("active-prayer");
-  } else {
-    document.getElementById("prayer-isha").classList.add("active-prayer");
-  }
+  } else if (nowMinutes >= isha || nowMinutes < fajr) {
+  document.getElementById("prayer-isha").classList.add("active-prayer");
+}
 }
 
+// ===============================
+// HIGHLIGHT CURRENT NAFL PRAYER
+// ===============================
 
+function highlightCurrentNaflPrayer(timings) {
+  const now = new Date();
+
+  const currentTime = now.toLocaleTimeString("en-US", {
+    timeZone: currentTimezone,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  const nowMinutes = timeToMinutes(currentTime);
+
+  const tahajjudStart = timeToMinutes(timings.Midnight);
+  const tahajjudEnd = timeToMinutes(timings.Fajr);
+
+  const ishraqStart = timeToMinutes(addMinutes(timings.Sunrise, 15));
+  const ishraqEnd = timeToMinutes(addMinutes(timings.Sunrise, 30));
+
+  const chashtStart = ishraqEnd;
+  const chashtEnd = timeToMinutes(timings.Dhuhr);
+
+  const awwabinStart = timeToMinutes(timings.Maghrib);
+  const awwabinEnd = timeToMinutes(timings.Isha);
+
+  // Remove old highlight
+  document
+    .querySelectorAll("#nafl-prayers li")
+    .forEach(li => li.classList.remove("active-nafl"));
+
+  if (nowMinutes >= tahajjudStart && nowMinutes < tahajjudEnd) {
+    document.getElementById("nafl-tahajjud").classList.add("active-nafl");
+  } else if (nowMinutes >= ishraqStart && nowMinutes < ishraqEnd) {
+    document.getElementById("nafl-ishraq").classList.add("active-nafl");
+  } else if (nowMinutes >= chashtStart && nowMinutes < chashtEnd) {
+    document.getElementById("nafl-chasht").classList.add("active-nafl");
+  } else if (nowMinutes >= awwabinStart && nowMinutes < awwabinEnd) {
+    document.getElementById("nafl-awwabin").classList.add("active-nafl");
+  }
+}
 
 // ===============================
 // FARZ PRAYER TIMES + SEHRI / IFTAR
@@ -148,12 +204,37 @@ async function loadPrayerTimes(cityValue) {
     document.getElementById("iftar").innerText = timings.Maghrib;
 
     // ===============================
+    // NAFIL PRAYER TIMES (CALCULATED)
+    // ===============================
+
+    // Tahajjud: Midnight → Fajr
+    document.getElementById("tahajjud-start").innerText = timings.Midnight;
+    document.getElementById("tahajjud-end").innerText = timings.Fajr;
+
+    // Ishraq: Sunrise + 15 min → Sunrise + 30 min
+    document.getElementById("ishraq-start").innerText =
+    addMinutes(timings.Sunrise, 15);
+    document.getElementById("ishraq-end").innerText =
+    addMinutes(timings.Sunrise, 30);
+
+    // Chasht (Duha): Sunrise + 30 min → Dhuhr
+    document.getElementById("chasht-start").innerText =
+    addMinutes(timings.Sunrise, 30);
+    document.getElementById("chasht-end").innerText = timings.Dhuhr;
+
+    // Awwabin: Maghrib → Isha
+    document.getElementById("awwabin-start").innerText = timings.Maghrib;
+    document.getElementById("awwabin-end").innerText = timings.Isha;
+
+
+    // ===============================
     // APPLY CURRENT PRAYER HIGHLIGHT
     // Runs after prayer times load
     // ===============================
 
     highlightCurrentPrayer(timings);
 
+    highlightCurrentNaflPrayer(timings);
 
     // Update date & time immediately after city change
     updateDateAndWorldTime();
@@ -187,13 +268,30 @@ setInterval(() => {
   const fajr = document.getElementById("fajr").innerText;
 
   if (fajr !== "--") {
-    highlightCurrentPrayer({
+
+    const timings = {
+      Midnight: document.getElementById("tahajjud-start").innerText,
       Fajr: document.getElementById("fajr").innerText,
       Sunrise: document.getElementById("fajr-end").innerText,
       Dhuhr: document.getElementById("dhuhr").innerText,
       Asr: document.getElementById("asr").innerText,
       Maghrib: document.getElementById("maghrib").innerText,
       Isha: document.getElementById("isha").innerText,
-    });
+    };
+
+    highlightCurrentPrayer(timings);
+    highlightCurrentNaflPrayer(timings);
   }
-}, 60000); // every 1 minute
+
+}, 60000); // every 1 minute  
+
+
+// ===============================
+// DARK MODE TOGGLE
+// ===============================
+
+const darkBtn = document.getElementById("dark-toggle");
+
+darkBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});

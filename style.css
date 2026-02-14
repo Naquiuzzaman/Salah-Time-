@@ -1,3 +1,257 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'segoe ui' , sans-serif;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #222;
+  border-left:  solid 20px #004953;
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 1px;
+  transition: 0.3s ease;
+  
+}
+
+/* ===============================
+   GLOBAL STYLES
+================================ */
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 8px 0;
+}
+
+/* ===============================
+   ACTIVE FARZ PRAYER
+================================ */
+
+.active-prayer {
+  background-color: #e6f4ea;
+  border-left: 6px solid #2e7d32;
+  padding-left: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* ===============================
+   ACTIVE NAFL PRAYER
+================================ */
+
+.active-nafl {
+  background-color: #eef6ff;
+  border-left: 4px solid #1976d2;
+  padding-left: 8px;
+  border-radius: 6px;
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+
+.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode section {
+  background: #1e1e1e;
+  box-shadow: none;
+}
+
+.dark-mode .active-prayer {
+  background-color: #1b3a2d;
+}
+
+.dark-mode .active-nafl {
+  background-color: #102a43;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===============================
    ACTIVE PRAYER HIGHLIGHT
    =============================== */
@@ -8,4 +262,13 @@
   padding: 10px;
   font-weight: bold;
   border-radius: 4px;
+}
+
+/* ===============================
+   NAFIL PRAYER HIGHLIGHT
+   =============================== */
+.active-nafl {
+  background-color: #ffe4e1;
+  border-left: 4px solid #FF0000;
+  font-weight: 600;
 }
