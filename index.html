@@ -4,21 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salah Time</title>
-    <button id="dark-toggle">🌙 Toggle Dark Mode</button>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- Header -->
-    <header>
-      <h1>Salah Time</h1>
-      <p>Daily Prayer & Fasting Times</p>
-    </header>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
 
-    <!-- City Selection -->
-    <section id="location">
-      <label for="city">Select City:</label>
-      <select id="city">
+<button id="stop-adhan-btn" onclick="stopAdhan()">⛔ Stop Azan</button>
+
+  <div class="logo">🕌 SalahTime</div>
+
+  <ul class="nav-links">
+    <li><a href="#location">Home</a></li>
+    <li><a href="#prayers">Prayer Times</a></li>
+    <li><a href="#nafl-prayers">Nafl</a></li>
+    <li><a href="#fasting">Fasting</a></li>
+  </ul>
+
+  <button id="dark-toggle">Dark Mode</button>
+</nav>
+
+  <button id="auto-location-btn">📍 Use My Location</button>
+
+     <div class="main-container">
+        <!-- City Selection -->
+        <section id="location">
+        <label for="city">Select City:</label>
+        <select id="city">
 
         <!-- 🇮🇳 India -->
         <option value="Delhi|India">Delhi</option>
@@ -101,6 +114,7 @@
 
     <!-- Date & Time -->
     <section id="date-time">
+       <h2>Date & Time</h2>
       <p id="english-date"></p>
       <p id="islamic-date"></p>
       <p id="live-time"></p>
@@ -111,29 +125,62 @@
       <h2>Prayer Times</h2>
   <ul>
     <li id="prayer-fajr">
+      <div class="prayer-info">
       Fajr: <span id="fajr">--</span>
+      </div>
       <small>(Ends: <span id="fajr-end">--</span>)</small>
+      <button class="mark-btn" id="btn-fajr"
+        onclick="markPrayer('Fajr')" disabled>
+        ✔ Mark Done
+     </button>
     </li>
 
     <li id="prayer-dhuhr">
+      <div class="prayer-info">
       Dhuhr: <span id="dhuhr">--</span>
+      </div>
       <small>(Ends: <span id="dhuhr-end">--</span>)</small>
+      <button class="mark-btn" id="btn-dhuhr"
+        onclick="markPrayer('Dhuhr')" disabled>
+        ✔ Mark Done
+     </button>
     </li>
+
 
     <li id="prayer-asr">
+      <div class="prayer-info">
       Asr: <span id="asr">--</span>
+      </div>
       <small>(Ends: <span id="asr-end">--</span>)</small>
+      <button class="mark-btn" id="btn-asr"
+        onclick="markPrayer('Asr')" disabled>
+        ✔ Mark Done
+     </button>
     </li>
 
+
     <li id="prayer-maghrib">
+      <div class="prayer-info">
       Maghrib: <span id="maghrib">--</span>
+      </div>
       <small>(Ends: <span id="maghrib-end">--</span>)</small>
+      <button class="mark-btn" id="btn-maghrib"
+        onclick="markPrayer('Maghrib')" disabled>
+        ✔ Mark Done
+     </button>
     </li>
 
     <li id="prayer-isha">
+      <div class="prayer-info">
       Isha: <span id="isha">--</span>
+      </div>
       <small>(Ends: <span id="isha-end">--</span>)</small>
+      <button class="mark-btn" id="btn-isha"
+        onclick="markPrayer('Isha')" disabled>
+        ✔ Mark Done
+     </button>
     </li>
+
   </ul>
 
 </section>
@@ -141,7 +188,6 @@
    <!-- Nafl Prayer Times -->
 <section id="nafl-prayers">
   <h2>Nafl Prayer Times</h2>
-
   <ul>
     <li id ="nafl-tahajjud">
       Tahajjud:
@@ -169,6 +215,43 @@
   </ul>
 </section>
 
+<!-- PROGRESS SECTION--> 
+
+<div class="progress-container">
+  <h3>Today's Progress</h3>
+  <div class="progress-bar">
+    <div id="progress-fill"></div>
+  </div>
+  <p id="progress-text">0%</p>
+</div>
+
+<!--STREAK-CONTAINER-->
+<div class="streak-container">
+  <h3>🔥 Streak</h3>
+  <p id="streak-count">0 Days</p>
+</div>
+
+<section id="history">
+<h2>Prayer History (Last 30 Days)</h2>
+
+<div id="history-heatmap"></div>
+
+</section>
+<!-- MONTHLY ANALYTICS -->
+<section id="analytics">
+<h2>Monthly Analytics</h2>
+
+<div class="analytics-container">
+
+<p id="days-tracked">Days tracked: 0</p>
+<p id="full-days">Full prayer days: 0</p>
+
+<div class="analytics-bar">
+<div class="analytics-fill" id="analytics-fill"></div>
+</div>
+
+</div>
+</section>
 
     <!-- Fasting Times -->
     <section id="fasting">
@@ -179,7 +262,49 @@
         <li>Iftar Time: <span id = "iftar">--</span></li>
       </ul>
     </section>
+    </div>
 
     <script src="script.js"></script>
+
+    <footer class="footer">
+
+  <div class="footer-content">
+    <!-- Left -->
+    <div class="footer-section">
+      <h3>🕌 SalahTime</h3>
+      <p>Your daily prayer & fasting companion.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>📧 marhabatabish1@gemail.com</p>
+      <p>📍 India</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="https://www.facebook.com/share/1KbxE7PQE1/">📘</a>
+        <a href="https://www.instagram.com/i_am_marhaba007?igsh=MTNmZTAxdTdhamVmOA==">📷</a>
+        <a href="https://www.linkedin.com/in/naquiuz-zaman-44967a294?utm_source=share_via&utm_content=profile&utm_medium=member_android">💼</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 SalahTime. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ===============================
+🔊 SOUND CONTROL PANEL (ADD HERE)
+=============================== -->
+<div class="sound-panel">
+  <button onclick="stopAdhan()">⛔ Stop Azan</button>
+</div>
   </body>
 </html>
