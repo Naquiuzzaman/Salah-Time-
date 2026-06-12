@@ -2,309 +2,320 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1  maximum-scale=1"
+    />
     <title>Salah Time</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <button id="stop-adhan-btn" onclick="stopAdhan()">⛔ Stop Azan</button>
 
-<button id="stop-adhan-btn" onclick="stopAdhan()">⛔ Stop Azan</button>
+      <div class="logo">🕌 SalahTime</div>
 
-  <div class="logo">🕌 SalahTime</div>
+      <ul class="nav-links">
+        <li><a href="#location">Home</a></li>
+        <li><a href="#prayers">Prayer Times</a></li>
+        <li><a href="#nafl-prayers">Nafl</a></li>
+        <li><a href="#fasting">Fasting</a></li>
+      </ul>
 
-  <ul class="nav-links">
-    <li><a href="#location">Home</a></li>
-    <li><a href="#prayers">Prayer Times</a></li>
-    <li><a href="#nafl-prayers">Nafl</a></li>
-    <li><a href="#fasting">Fasting</a></li>
-  </ul>
+      <button id="dark-toggle">Dark Mode</button>
+    </nav>
 
-  <button id="dark-toggle">Dark Mode</button>
-</nav>
+    <button id="auto-location-btn">📍 Use My Location</button>
 
-  <button id="auto-location-btn">📍 Use My Location</button>
-
-     <div class="main-container">
-        <!-- City Selection -->
-        <section id="location">
+    <div class="main-container">
+      <!-- City Selection -->
+      <section id="location">
         <label for="city">Select City:</label>
         <select id="city">
+          <!-- 🇮🇳 India -->
+          <option value="Delhi|India">Delhi</option>
+          <option value="Mumbai|India">Mumbai, Maharashtra</option>
+          <option value="Patna|India">Patna, Bihar</option>
+          <option value="Muzaffarpur|India">Muzaffarpur, Bihar</option>
+          <option value="Hyderabad|India">Hyderabad, Telangana</option>
+          <option value="Bengaluru|India">
+            Bengaluru (Bangalore), Karnataka
+          </option>
+          <option value="Chennai|India">Chennai, Tamil Nadu</option>
+          <option value="Ahmedabad|India">Ahmedabad, Gujarat</option>
+          <option value="Pune|India">Pune, Maharashtra</option>
+          <option value="Jaipur|India">Jaipur, Rajasthan</option>
+          <option value="Surat|India">Surat, Gujarat</option>
+          <option value="Lucknow|India">Lucknow, Uttar Pradesh</option>
+          <option value="Kanpur|India">Kanpur, Uttar Pradesh</option>
+          <option value="Nagpur|India">Nagpur, Maharashtra</option>
+          <option value="Visakhapatnam|India">
+            Visakhapatnam (Vizag), Andhra Pradesh
+          </option>
+          <option value="Indore|India">Indore, Madhya Pradesh</option>
+          <option value="Thiruvananthapuram|India">
+            Thiruvananthapuram, Kerala
+          </option>
+          <option value="Coimbatore|India">Coimbatore, Tamil Nadu</option>
+          <option value="Gurgaon|India">Gurgaon (Gurugram), Haryana</option>
+          <option value="Noida|India">Noida, Uttar Pradesh</option>
+          <option value="Chandigarh|India">Chandigarh</option>
+          <option value="Mysore|India">Mysore, Karnataka</option>
+          <option value="Kolkata|India">Kolkata, West Bengal</option>
+          <option value="Srinagar|India">Srinagar, Jammu and Kashmir</option>
+          <option value="Sheohar|India">Sheohar, Bihar</option>
 
-        <!-- 🇮🇳 India -->
-        <option value="Delhi|India">Delhi</option>
-        <option value="Mumbai|India">Mumbai, Maharashtra</option>
-        <option value="Patna|India">Patna, Bihar</option>
-        <option value="Muzaffarpur|India">Muzaffarpur, Bihar</option>
-        <option value="Hyderabad|India">Hyderabad, Telangana</option>
-        <option value="Bengaluru|India">Bengaluru (Bangalore), Karnataka</option>
-        <option value="Chennai|India">Chennai, Tamil Nadu</option>
-        <option value="Ahmedabad|India">Ahmedabad, Gujarat</option>
-        <option value="Pune|India">Pune, Maharashtra</option>
-        <option value="Jaipur|India">Jaipur, Rajasthan</option>
-        <option value="Surat|India">Surat, Gujarat</option>
-        <option value="Lucknow|India">Lucknow, Uttar Pradesh</option>
-        <option value="Kanpur|India">Kanpur, Uttar Pradesh</option>
-        <option value="Nagpur|India">Nagpur, Maharashtra</option>
-        <option value="Visakhapatnam|India">
-          Visakhapatnam (Vizag), Andhra Pradesh
-        </option>
-        <option value="Indore|India">Indore, Madhya Pradesh</option>
-        <option value="Thiruvananthapuram|India">
-          Thiruvananthapuram, Kerala
-        </option>
-        <option value="Coimbatore|India">Coimbatore, Tamil Nadu</option>
-        <option value="Gurgaon|India">Gurgaon (Gurugram), Haryana</option>
-        <option value="Noida|India">Noida, Uttar Pradesh</option>
-        <option value="Chandigarh|India">Chandigarh</option>
-        <option value="Mysore|India">Mysore, Karnataka</option>
-        <option value="Kolkata|India">Kolkata, West Bengal</option>
-        <option value="Srinagar|India">Srinagar, Jammu and Kashmir</option>
-        <option value="Sheohar|India">Sheohar, Bihar</option>
+          <!-- 🌍 International Cities -->
+          <option value="Mecca|Saudi Arabia">Mecca, Saudi Arabia</option>
+          <option value="Medina|Saudi Arabia">Medina, Saudi Arabia</option>
 
-        <!-- 🌍 International Cities -->
-        <option value="Mecca|Saudi Arabia">Mecca, Saudi Arabia</option>
-        <option value="Medina|Saudi Arabia">Medina, Saudi Arabia</option>
+          <option value="Dubai|United Arab Emirates">Dubai, UAE</option>
+          <option value="Abu Dhabi|United Arab Emirates">Abu Dhabi, UAE</option>
+          <option value="Doha|Qatar">Doha, Qatar</option>
+          <option value="Kuwait City|Kuwait">Kuwait City, Kuwait</option>
+          <option value="Muscat|Oman">Muscat, Oman</option>
+          <option value="Manama|Bahrain">Manama, Bahrain</option>
 
-        <option value="Dubai|United Arab Emirates">Dubai, UAE</option>
-        <option value="Abu Dhabi|United Arab Emirates">Abu Dhabi, UAE</option>
-        <option value="Doha|Qatar">Doha, Qatar</option>
-        <option value="Kuwait City|Kuwait">Kuwait City, Kuwait</option>
-        <option value="Muscat|Oman">Muscat, Oman</option>
-        <option value="Manama|Bahrain">Manama, Bahrain</option>
+          <option value="Karachi|Pakistan">Karachi, Pakistan</option>
+          <option value="Lahore|Pakistan">Lahore, Pakistan</option>
+          <option value="Dhaka|Bangladesh">Dhaka, Bangladesh</option>
+          <option value="Colombo|Sri Lanka">Colombo, Sri Lanka</option>
+          <option value="Kathmandu|Nepal">Kathmandu, Nepal</option>
+          <option value="Kabul|Afghanistan">Kabul, Afghanistan</option>
 
-        <option value="Karachi|Pakistan">Karachi, Pakistan</option>
-        <option value="Lahore|Pakistan">Lahore, Pakistan</option>
-        <option value="Dhaka|Bangladesh">Dhaka, Bangladesh</option>
-        <option value="Colombo|Sri Lanka">Colombo, Sri Lanka</option>
-        <option value="Kathmandu|Nepal">Kathmandu, Nepal</option>
-        <option value="Kabul|Afghanistan">Kabul, Afghanistan</option>
+          <option value="London|United Kingdom">London, UK</option>
+          <option value="Manchester|United Kingdom">Manchester, UK</option>
+          <option value="Paris|France">Paris, France</option>
+          <option value="Berlin|Germany">Berlin, Germany</option>
+          <option value="Rome|Italy">Rome, Italy</option>
+          <option value="Madrid|Spain">Madrid, Spain</option>
 
-        <option value="London|United Kingdom">London, UK</option>
-        <option value="Manchester|United Kingdom">Manchester, UK</option>
-        <option value="Paris|France">Paris, France</option>
-        <option value="Berlin|Germany">Berlin, Germany</option>
-        <option value="Rome|Italy">Rome, Italy</option>
-        <option value="Madrid|Spain">Madrid, Spain</option>
+          <option value="New York|United States">New York, USA</option>
+          <option value="Los Angeles|United States">Los Angeles, USA</option>
+          <option value="Toronto|Canada">Toronto, Canada</option>
+          <option value="Vancouver|Canada">Vancouver, Canada</option>
 
-        <option value="New York|United States">New York, USA</option>
-        <option value="Los Angeles|United States">Los Angeles, USA</option>
-        <option value="Toronto|Canada">Toronto, Canada</option>
-        <option value="Vancouver|Canada">Vancouver, Canada</option>
+          <option value="Sydney|Australia">Sydney, Australia</option>
+          <option value="Melbourne|Australia">Melbourne, Australia</option>
+          <option value="Auckland|New Zealand">Auckland, New Zealand</option>
 
-        <option value="Sydney|Australia">Sydney, Australia</option>
-        <option value="Melbourne|Australia">Melbourne, Australia</option>
-        <option value="Auckland|New Zealand">Auckland, New Zealand</option>
+          <option value="Tokyo|Japan">Tokyo, Japan</option>
+          <option value="Seoul|South Korea">Seoul, South Korea</option>
+          <option value="Bangkok|Thailand">Bangkok, Thailand</option>
+          <option value="Kuala Lumpur|Malaysia">Kuala Lumpur, Malaysia</option>
+          <option value="Jakarta|Indonesia">Jakarta, Indonesia</option>
+          <option value="Singapore|Singapore">Singapore</option>
 
-        <option value="Tokyo|Japan">Tokyo, Japan</option>
-        <option value="Seoul|South Korea">Seoul, South Korea</option>
-        <option value="Bangkok|Thailand">Bangkok, Thailand</option>
-        <option value="Kuala Lumpur|Malaysia">Kuala Lumpur, Malaysia</option>
-        <option value="Jakarta|Indonesia">Jakarta, Indonesia</option>
-        <option value="Singapore|Singapore">Singapore</option>
+          <option value="Cairo|Egypt">Cairo, Egypt</option>
+          <option value="Casablanca|Morocco">Casablanca, Morocco</option>
+          <option value="Johannesburg|South Africa">
+            Johannesburg, South Africa
+          </option>
+        </select>
+      </section>
 
-        <option value="Cairo|Egypt">Cairo, Egypt</option>
-        <option value="Casablanca|Morocco">Casablanca, Morocco</option>
-        <option value="Johannesburg|South Africa">Johannesburg, South Africa</option>
+      <!-- Date & Time -->
+      <section id="date-time">
+        <h2>Date & Time</h2>
+        <p id="english-date"></p>
+        <p id="islamic-date"></p>
+        <p id="live-time"></p>
+      </section>
 
-      </select>
-    </section>
+      <!-- Prayer Times -->
+      <section id="prayers">
+        <h2>Prayer Times</h2>
+        <ul>
+          <li id="prayer-fajr">
+            <div class="prayer-info">Fajr: <span id="fajr">--</span></div>
+            <small>(Ends: <span id="fajr-end">--</span>)</small>
+            <button
+              class="mark-btn"
+              id="btn-fajr"
+              onclick="markPrayer('Fajr')"
+              disabled
+            >
+              ✔ Mark Done
+            </button>
+          </li>
 
-    <!-- Date & Time -->
-    <section id="date-time">
-       <h2>Date & Time</h2>
-      <p id="english-date"></p>
-      <p id="islamic-date"></p>
-      <p id="live-time"></p>
-    </section>
+          <li id="prayer-dhuhr">
+            <div class="prayer-info">Dhuhr: <span id="dhuhr">--</span></div>
+            <small>(Ends: <span id="dhuhr-end">--</span>)</small>
+            <button
+              class="mark-btn"
+              id="btn-dhuhr"
+              onclick="markPrayer('Dhuhr')"
+              disabled
+            >
+              ✔ Mark Done
+            </button>
+          </li>
 
-    <!-- Prayer Times -->
-    <section id="prayers">
-      <h2>Prayer Times</h2>
-  <ul>
-    <li id="prayer-fajr">
-      <div class="prayer-info">
-      Fajr: <span id="fajr">--</span>
+          <li id="prayer-asr">
+            <div class="prayer-info">Asr: <span id="asr">--</span></div>
+            <small>(Ends: <span id="asr-end">--</span>)</small>
+            <button
+              class="mark-btn"
+              id="btn-asr"
+              onclick="markPrayer('Asr')"
+              disabled
+            >
+              ✔ Mark Done
+            </button>
+          </li>
+
+          <li id="prayer-maghrib">
+            <div class="prayer-info">Maghrib: <span id="maghrib">--</span></div>
+            <small>(Ends: <span id="maghrib-end">--</span>)</small>
+            <button
+              class="mark-btn"
+              id="btn-maghrib"
+              onclick="markPrayer('Maghrib')"
+              disabled
+            >
+              ✔ Mark Done
+            </button>
+          </li>
+
+          <li id="prayer-isha">
+            <div class="prayer-info">Isha: <span id="isha">--</span></div>
+            <small>(Ends: <span id="isha-end">--</span>)</small>
+            <button
+              class="mark-btn"
+              id="btn-isha"
+              onclick="markPrayer('Isha')"
+              disabled
+            >
+              ✔ Mark Done
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Nafl Prayer Times -->
+      <section id="nafl-prayers">
+        <h2>Nafl Prayer Times</h2>
+        <ul>
+          <li id="nafl-tahajjud">
+            Tahajjud:
+            <span id="tahajjud-start">--</span> –
+            <span id="tahajjud-end">--</span>
+          </li>
+
+          <li id="nafl-ishraq">
+            Ishraq:
+            <span id="ishraq-start">--</span> –
+            <span id="ishraq-end">--</span>
+          </li>
+
+          <li id="nafl-chasht">
+            Chasht (Duha):
+            <span id="chasht-start">--</span> –
+            <span id="chasht-end">--</span>
+          </li>
+
+          <li id="nafl-awwabin">
+            Awwabin:
+            <span id="awwabin-start">--</span> –
+            <span id="awwabin-end">--</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- PROGRESS SECTION-->
+
+      <div class="progress-container">
+        <h3>Today's Progress</h3>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <p id="progress-text">0%</p>
       </div>
-      <small>(Ends: <span id="fajr-end">--</span>)</small>
-      <button class="mark-btn" id="btn-fajr"
-        onclick="markPrayer('Fajr')" disabled>
-        ✔ Mark Done
-     </button>
-    </li>
 
-    <li id="prayer-dhuhr">
-      <div class="prayer-info">
-      Dhuhr: <span id="dhuhr">--</span>
+      <!--STREAK-CONTAINER-->
+      <div class="streak-container">
+        <h3>🔥 Streak</h3>
+        <p id="streak-count">0 Days</p>
       </div>
-      <small>(Ends: <span id="dhuhr-end">--</span>)</small>
-      <button class="mark-btn" id="btn-dhuhr"
-        onclick="markPrayer('Dhuhr')" disabled>
-        ✔ Mark Done
-     </button>
-    </li>
 
+      <section id="history">
+        <h2>Prayer History (Last 30 Days)</h2>
 
-    <li id="prayer-asr">
-      <div class="prayer-info">
-      Asr: <span id="asr">--</span>
-      </div>
-      <small>(Ends: <span id="asr-end">--</span>)</small>
-      <button class="mark-btn" id="btn-asr"
-        onclick="markPrayer('Asr')" disabled>
-        ✔ Mark Done
-     </button>
-    </li>
+        <div id="history-heatmap"></div>
+      </section>
+      <!-- MONTHLY ANALYTICS -->
+      <section id="analytics">
+        <h2>Monthly Analytics</h2>
 
+        <div class="analytics-container">
+          <p id="days-tracked">Days tracked: 0</p>
+          <p id="full-days">Full prayer days: 0</p>
 
-    <li id="prayer-maghrib">
-      <div class="prayer-info">
-      Maghrib: <span id="maghrib">--</span>
-      </div>
-      <small>(Ends: <span id="maghrib-end">--</span>)</small>
-      <button class="mark-btn" id="btn-maghrib"
-        onclick="markPrayer('Maghrib')" disabled>
-        ✔ Mark Done
-     </button>
-    </li>
+          <div class="analytics-bar">
+            <div class="analytics-fill" id="analytics-fill"></div>
+          </div>
+        </div>
+      </section>
 
-    <li id="prayer-isha">
-      <div class="prayer-info">
-      Isha: <span id="isha">--</span>
-      </div>
-      <small>(Ends: <span id="isha-end">--</span>)</small>
-      <button class="mark-btn" id="btn-isha"
-        onclick="markPrayer('Isha')" disabled>
-        ✔ Mark Done
-     </button>
-    </li>
-
-  </ul>
-
-</section>
-
-   <!-- Nafl Prayer Times -->
-<section id="nafl-prayers">
-  <h2>Nafl Prayer Times</h2>
-  <ul>
-    <li id ="nafl-tahajjud">
-      Tahajjud:
-      <span id="tahajjud-start">--</span> –
-      <span id="tahajjud-end">--</span>
-    </li>
-
-    <li id="nafl-ishraq">
-      Ishraq:
-      <span id="ishraq-start">--</span> –
-      <span id="ishraq-end">--</span>
-    </li>
-
-    <li id="nafl-chasht">
-      Chasht (Duha):
-      <span id="chasht-start">--</span> –
-      <span id="chasht-end">--</span>
-    </li>
-
-    <li id="nafl-awwabin">
-      Awwabin:
-      <span id="awwabin-start">--</span> –
-      <span id="awwabin-end">--</span>
-    </li>
-  </ul>
-</section>
-
-<!-- PROGRESS SECTION--> 
-
-<div class="progress-container">
-  <h3>Today's Progress</h3>
-  <div class="progress-bar">
-    <div id="progress-fill"></div>
-  </div>
-  <p id="progress-text">0%</p>
-</div>
-
-<!--STREAK-CONTAINER-->
-<div class="streak-container">
-  <h3>🔥 Streak</h3>
-  <p id="streak-count">0 Days</p>
-</div>
-
-<section id="history">
-<h2>Prayer History (Last 30 Days)</h2>
-
-<div id="history-heatmap"></div>
-
-</section>
-<!-- MONTHLY ANALYTICS -->
-<section id="analytics">
-<h2>Monthly Analytics</h2>
-
-<div class="analytics-container">
-
-<p id="days-tracked">Days tracked: 0</p>
-<p id="full-days">Full prayer days: 0</p>
-
-<div class="analytics-bar">
-<div class="analytics-fill" id="analytics-fill"></div>
-</div>
-
-</div>
-</section>
-
-    <!-- Fasting Times -->
-    <section id="fasting">
-      <h2>Fasting Times</h2>
-      <ul>
-        <li>Sehri Starts: <span id="sehri-start">--</span></li>
-        <li>Sehri Ends: <span id="sehri-end">--</span></li>
-        <li>Iftar Time: <span id = "iftar">--</span></li>
-      </ul>
-    </section>
+      <!-- Fasting Times -->
+      <section id="fasting">
+        <h2>Fasting Times</h2>
+        <ul>
+          <li>Sehri Starts: <span id="sehri-start">--</span></li>
+          <li>Sehri Ends: <span id="sehri-end">--</span></li>
+          <li>Iftar Time: <span id="iftar">--</span></li>
+        </ul>
+      </section>
     </div>
 
     <script src="script.js"></script>
 
     <footer class="footer">
+      <div class="footer-content">
+        <!-- Left -->
+        <div class="footer-section">
+          <h3>🕌 SalahTime</h3>
+          <p>Your daily prayer & fasting companion.</p>
+        </div>
 
-  <div class="footer-content">
-    <!-- Left -->
-    <div class="footer-section">
-      <h3>🕌 SalahTime</h3>
-      <p>Your daily prayer & fasting companion.</p>
-    </div>
+        <!-- Contact -->
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>📧 marhabatabish1@gemail.com</p>
+          <p>📍 India</p>
+        </div>
 
-    <!-- Contact -->
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <p>📧 marhabatabish1@gemail.com</p>
-      <p>📍 India</p>
-    </div>
-
-    <!-- Social Media -->
-    <div class="footer-section">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="#">🌐</a>
-        <a href="https://www.facebook.com/share/1KbxE7PQE1/">📘</a>
-        <a href="https://www.instagram.com/i_am_marhaba007?igsh=MTNmZTAxdTdhamVmOA==">📷</a>
-        <a href="https://www.linkedin.com/in/naquiuz-zaman-44967a294?utm_source=share_via&utm_content=profile&utm_medium=member_android">💼</a>
+        <!-- Social Media -->
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#">🌐</a>
+            <a href="https://www.facebook.com/share/1KbxE7PQE1/">📘</a>
+            <a
+              href="https://www.instagram.com/i_am_marhaba007?igsh=MTNmZTAxdTdhamVmOA=="
+              >📷</a
+            >
+            <a
+              href="https://www.linkedin.com/in/naquiuz-zaman-44967a294?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              >💼</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SalahTime. All Rights Reserved.</p>
+      </div>
+    </footer>
 
-  <div class="footer-bottom">
-    <p>&copy; 2026 SalahTime. All Rights Reserved.</p>
-  </div>
-</footer>
-
-<!-- ===============================
+    <!-- ===============================
 🔊 SOUND CONTROL PANEL (ADD HERE)
 =============================== -->
-<div class="sound-panel">
-  <button onclick="stopAdhan()">⛔ Stop Azan</button>
-</div>
+    <div class="sound-panel">
+      <button onclick="stopAdhan()">⛔ Stop Azan</button>
+    </div>
   </body>
 </html>
