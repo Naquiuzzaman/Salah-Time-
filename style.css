@@ -63,13 +63,11 @@ body.dark-mode .navbar {
 ================================ */
 body {
   background:
-    linear-gradient(rgba(232, 213, 192, 0.4), rgba(232, 213, 192, 0.4)),
-    url("mosque.png") center center no-repeat;
-
-  background-size: cover;
-  min-height: 100vh;
-  color: #3e2c23;
-  background-attachment: scroll;
+    linear-gradient(rgba(232,213,192,0.4), rgba(232,213,192,0.4)),
+    url("mosque.png") no-repeat center center fixed;
+    background-size:cover;
+    min-height: 100vh;
+    color: #3e2c23;
 }
 
 /* ===============================
@@ -247,10 +245,9 @@ body.dark-mode #live-time {
 body.dark-mode {
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("mosque.png") center center no-repeat;
+    url("mosque.png") no-repeat center center fixed;
   background-size: cover;
   color: #e2e8f0;
-  background-attachment: scroll;
 }
 
 /* ===============================
@@ -584,33 +581,3 @@ body.dark-mode .analytics-fill {
   transform: scale(1.05);
 }
 
-
-
-@media (max-width:768px){
-
-  .navbar{
-    padding:10px;
-  }
-
-  .logo{
-    font-size:18px;
-  }
-
-  .nav-links{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    gap:8px;
-    width:100%;
-    text-align:center;
-  }
-
-  .nav-links a{
-    font-size:14px;
-  }
-
-  #dark-toggle{
-    margin-top:8px;
-    font-size:13px;
-    padding:6px 12px;
-  }
-}
