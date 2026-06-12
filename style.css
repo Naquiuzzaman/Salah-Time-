@@ -583,3 +583,35 @@ body.dark-mode .analytics-fill {
   transform: scale(1.05);
 }
 
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px){
+
+  .main-container{
+    max-width: 500px;
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  section{
+    padding: 15px;
+  }
+
+  body{
+    font-size: 14px;
+  }
+
+  #live-time{
+    font-size: 26px;
+  }
+
+  .navbar{
+    padding: 12px;
+  }
+
+  .logo{
+    font-size: 18px;
+  }
+}
