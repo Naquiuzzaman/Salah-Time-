@@ -69,7 +69,6 @@ body {
     background-size:cover;
     min-height: 100vh;
     color: #3e2c23;
-    overscroll-behavior-y: none;
 }
 
 /* ===============================
@@ -609,7 +608,12 @@ body.dark-mode .analytics-fill {
 
   .navbar{
     padding: 12px;
+    flex-wrap: wrap;
   }
+.nav-links{
+    gap:10px;
+  }
+
 
   .logo{
     font-size: 18px;
