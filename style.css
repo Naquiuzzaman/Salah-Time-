@@ -1,313 +1,314 @@
 /* ===============================
    GLOBAL RESET
 ================================ */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* ===============================
    SIMPLE NAVBAR
 ================================ */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
-  background:linear-gradient(135deg,#1b5e20,#2e7d32);
-  color:white;
-  z-index:1000;
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.logo{
-  font-size:22px;
-  font-weight:bold;
+.logo {
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:25px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
   text-decoration: none !important;
 }
 
 .nav-links a {
-  text-decoration:none;
-  color:white;
-  font-weight:500;
-  transition:0.3s;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.nav-links a:hover{
-  color:#000000;
+.nav-links a:hover {
+  color: #000000;
 }
 
 /* ===============================*/
-   /*Location distance from navbar*/
- /*===============================*/
+/*Location distance from navbar*/
+/*===============================*/
 
- #location {
-  margin-top:25px;
- }
- 
+#location {
+  margin-top: 25px;
+}
 
 /* Dark Mode Navbar */
-body.dark-mode .navbar{
-  background:linear-gradient(135deg,#064e3b,#065f46);
+body.dark-mode .navbar {
+  background: linear-gradient(135deg, #064e3b, #065f46);
 }
 
 /* ===============================
    LIGHT MODE BACKGROUND
 ================================ */
-body{
+body {
   background:
-    linear-gradient(rgba(232,213,192,0.4), rgba(232,213,192,0.4)),
-    url("mosque.png") no-repeat center center fixed;
+    linear-gradient(rgba(232, 213, 192, 0.4), rgba(232, 213, 192, 0.4)),
+    url("mosque.png") center center no-repeat;
 
-  background-size:cover;
-  min-height:100vh;
-  color:#3e2c23;
+  background-size: cover;
+  min-height: 100vh;
+  color: #3e2c23;
+  background-attachment: scroll;
 }
 
 /* ===============================
    DARK MODE BACKGROUND
 ================================ */
-body.dark-mode{
+body.dark-mode {
   background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("mosque.png") no-repeat center center fixed;
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("mosque.png") center center no-repeat;
 
-  background-size:cover;
-  color:#e2e8f0;
+  background-size: cover;
+  color: #e2e8f0;
+  background-attachment: scroll;
 }
 
-header h1{
-  font-size:28px;
-  letter-spacing:1px;
+header h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
 }
 
 /* ===============================
    DARK MODE BUTTON
 ================================ */
-#dark-toggle{
-  background:linear-gradient(145deg,hsl(0, 0%, 0%),#000000);
-  border:none;
-  padding:8px 18px;
-  margin-top:15px;
-  border-radius:25px;
-  color:white;
-  box-shadow:3px 3px 8px rgba(0,0,0,0.3);
-  cursor:pointer;
-  transition:0.3s ease;
+#dark-toggle {
+  background: linear-gradient(145deg, hsl(0, 0%, 0%), #000000);
+  border: none;
+  padding: 8px 18px;
+  margin-top: 15px;
+  border-radius: 25px;
+  color: white;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-#dark-toggle:hover{
-  transform:scale(1.05);
+#dark-toggle:hover {
+  transform: scale(1.05);
 }
 
 /* ===============================
    MAIN CONTAINER
 ================================ */
-.main-container{
-  max-width:900px;
-  margin:40px auto;
-  padding:20px;
-  display:grid;
-  gap:25px;
+.main-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  gap: 25px;
   margin-top: -20px;
 }
 
 /* ===============================
    CARD STYLE
 ================================ */
-section{
-  background:linear-gradient(145deg,#f2e1ce,#d4b08c);
-  border-radius:15px;
-  padding:20px;
+section {
+  background: linear-gradient(145deg, #f2e1ce, #d4b08c);
+  border-radius: 15px;
+  padding: 20px;
   box-shadow:
-    6px 6px 15px rgba(0,0,0,0.2),
-    -6px -6px 15px rgba(255,255,255,0.3);
-  transition:0.3s ease;
+    6px 6px 15px rgba(0, 0, 0, 0.2),
+    -6px -6px 15px rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease;
 }
 
-section:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 35px rgba(0,0,0,0.25);
+section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
 }
 
 /* ===============================
    DARK MODE CARD
 ================================ */
-body.dark-mode section{
-  background:linear-gradient(145deg,#1e293b,#0f172a);
+body.dark-mode section {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
   box-shadow:
-    6px 6px 15px rgba(0,0,0,0.6),
-    -6px -6px 15px rgba(255,255,255,0.05);
+    6px 6px 15px rgba(0, 0, 0, 0.6),
+    -6px -6px 15px rgba(255, 255, 255, 0.05);
 }
 
 /* ===============================
    HEADINGS
 ================================ */
-h2{
-  color:#1b5e20;
-  margin-bottom:10px;
-  border-bottom:2px solid #c8a951;
-  display:inline-block;
-  padding-bottom:8px;
+h2 {
+  color: #1b5e20;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #c8a951;
+  display: inline-block;
+  padding-bottom: 8px;
 }
 
-body.dark-mode h2{
-  color:#10b981;
-  border-color:#10b981;
+body.dark-mode h2 {
+  color: #10b981;
+  border-color: #10b981;
 }
 
 /*================================*/
-   /*LIST STYLE */
+/*LIST STYLE */
 /*=================================*/
 
-ul{
-  list-style:none;
+ul {
+  list-style: none;
 }
 
-li{
-  padding:12px 8px;
-  border-bottom:1px solid #e0e0e0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  transition:0.3s ease;
+li {
+  padding: 12px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
 }
 
-li:last-child{
-  border-bottom:none;
+li:last-child {
+  border-bottom: none;
 }
 
-body.dark-mode li{
-  border-bottom:1px solid #334155;
+body.dark-mode li {
+  border-bottom: 1px solid #334155;
 }
 
 /* ===============================
    ACTIVE PRAYER HIGHLIGHT
 ================================ */
-.active-prayer{
-  background:#e8f5e9;
-  border-left:5px solid #1b5e20;
-  padding-left:10px;
-  font-weight:bold;
-  border-radius:12px;
+.active-prayer {
+  background: #e8f5e9;
+  border-left: 5px solid #1b5e20;
+  padding-left: 10px;
+  font-weight: bold;
+  border-radius: 12px;
 }
 
-body.dark-mode .active-prayer{
-  background:#064e3b;
-  border-left:5px solid #10b981;
+body.dark-mode .active-prayer {
+  background: #064e3b;
+  border-left: 5px solid #10b981;
 }
 
 /* ===============================
    ACTIVE NAFL HIGHLIGHT
 ================================ */
-.active-nafl{
-  background:#fff3cd;
-  border-left:5px solid #c8a951;
-  padding-left:10px;
-  font-weight:600;
-  border-radius:8px;
+.active-nafl {
+  background: #fff3cd;
+  border-left: 5px solid #c8a951;
+  padding-left: 10px;
+  font-weight: 600;
+  border-radius: 8px;
 }
 
-body.dark-mode .active-nafl{
-  background:#78350f;
-  border-left:5px solid #facc15;
+body.dark-mode .active-nafl {
+  background: #78350f;
+  border-left: 5px solid #facc15;
 }
 
 /* ===============================
    LIVE DIGITAL TIME
 ================================ */
-#live-time{
-  margin-top:20px;
-  font-size:32px;
-  font-weight:bold;
-  letter-spacing:4px;
-  background:#3e2c23;
-  color:#f2e1ce;
-  padding:10px 20px;
-  border-radius:8px;
-  display:inline-block;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+#live-time {
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  background: #3e2c23;
+  color: #f2e1ce;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode #live-time{
-  background:#0f172a;
-  color:#10b981;
-  box-shadow:0 0 15px rgba(16,185,129,0.6);
+body.dark-mode #live-time {
+  background: #0f172a;
+  color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
 }
 
-body.dark-mode{
+body.dark-mode {
   background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("mosque.png") no-repeat center center fixed;
-
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("mosque.png") center center no-repeat;
   background-size: cover;
-  color:#e2e8f0;
+  color: #e2e8f0;
+  background-attachment: scroll;
 }
 
 /* ===============================
    PREMIUM FOOTER
 ================================ */
-.footer{
-  background: linear-gradient(135deg,#1b5e20,#2e7d32);
-  color:white;
-  padding:30px 20px 20px;
-  margin-top:60px;
+.footer {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  color: white;
+  padding: 30px 20px 20px;
+  margin-top: 60px;
 }
 
-.footer-content{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:30px;
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .footer-section h3,
-.footer-section h4{
-  margin-bottom:15px;
-  color:#c8a951;
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: #c8a951;
 }
 
-.footer-section p{
-  margin-bottom:8px;
-  font-size:14px;
+.footer-section p {
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
-.social-icons{
-  display:flex;
-  gap:15px;
+.social-icons {
+  display: flex;
+  gap: 15px;
 }
 
-.social-icons a{
-  text-decoration:none;
-  font-size:20px;
-  transition:0.3s;
+.social-icons a {
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
 }
 
-.social-icons a:hover{
-  transform:scale(1.2);
-  color:#c8a951;
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #c8a951;
 }
 
-.footer-bottom{
-  text-align:center;
-  margin-top:30px;
-  border-top:1px solid rgba(255,255,255,0.2);
-  padding-top:15px;
-  font-size:14px;
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  font-size: 14px;
 }
 
 /* Dark Mode Footer */
-body.dark-mode .footer{
+body.dark-mode .footer {
   background:
     linear-gradient(#064e3b, #10b981),
     url("https://www.transparenttextures.com/patterns/arabesque.png");
@@ -317,242 +318,239 @@ body.dark-mode .footer{
    COMPLETED PRAYER STATUS STYLE
 ================================ */
 
-.completed-prayer{
-  background:#d4edda;
-  border-left:5px solid green;
+.completed-prayer {
+  background: #d4edda;
+  border-left: 5px solid green;
 }
 
 /* Dark Mode Completed Prayer */
-body.dark-mode .completed-prayer{
-  background:#064e3b;
-  border-left:5px solid #10b981;
+body.dark-mode .completed-prayer {
+  background: #064e3b;
+  border-left: 5px solid #10b981;
 }
 
 /* ===============================
    PROGRESS BAR
 ================================ */
 
-.progress-container{
-  margin-top:20px;
+.progress-container {
+  margin-top: 20px;
 }
 
-.progress-bar{
-  width:100%;
-  height:20px;
-  background:#eee;
-  border-radius:20px;
-  overflow:hidden;
-  margin:10px 0;
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 10px 0;
 }
 
-#progress-fill{
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,#1b5e20,#2e7d32);
-  transition:0.5s ease;
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #1b5e20, #2e7d32);
+  transition: 0.5s ease;
 }
 
-body.dark-mode .progress-bar{
-  background:#334155;
+body.dark-mode .progress-bar {
+  background: #334155;
 }
 
-body.dark-mode #progress-fill{
-  background:linear-gradient(90deg,#10b981,#065f46);
+body.dark-mode #progress-fill {
+  background: linear-gradient(90deg, #10b981, #065f46);
 }
 
 /* ===============================
    STREAK COUNTER
 ================================ */
 
-.streak-container{
-  margin-top:20px;
-  text-align:center;
-  font-size:18px;
-  font-weight:bold;
+.streak-container {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-#streak-count{
-  color:#c8a951;
-  font-size:22px;
+#streak-count {
+  color: #c8a951;
+  font-size: 22px;
 }
 
-body.dark-mode #streak-count{
-  color:#10b981;
+body.dark-mode #streak-count {
+  color: #10b981;
 }
 
 /* ===============================
     AUTO LOCATION BUTTON
 ================================ */
 
-#auto-location-btn{
-  margin-top:10px;
-  padding:8px 15px;
-  border:none;
-  border-radius:20px;
-  background:#0e0e0e;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
+#auto-location-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background: #0e0e0e;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#auto-location-btn:hover{
-  transform:scale(1.05);
+#auto-location-btn:hover {
+  transform: scale(1.05);
 }
 
-body.dark-mode #auto-location-btn{
-  background:#10b981;
+body.dark-mode #auto-location-btn {
+  background: #10b981;
 }
 
 /* ===============================
    MARK DONE BUTTON STYLE
 ================================ */
 
-.mark-btn{
-  padding:6px 14px;
-  border:none;
-  border-radius:20px;
-  background:linear-gradient(135deg,#1b5e20,#2e7d32);
-  color:white;
-  font-size:14px;
-  cursor:pointer;
-  transition:0.3s ease;
+.mark-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.mark-btn:hover{
-  transform:scale(1.05);
+.mark-btn:hover {
+  transform: scale(1.05);
 }
 
-.mark-btn:disabled{
-  background:#aaa;
-  cursor:not-allowed;
-  opacity:0.6;
+.mark-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 /* Completed State */
-.completed-prayer .mark-btn{
-  background:#10b981;
+.completed-prayer .mark-btn {
+  background: #10b981;
 }
 
 /* Dark Mode */
-body.dark-mode .mark-btn{
-  background:linear-gradient(135deg,#065f46,#10b981);
+body.dark-mode .mark-btn {
+  background: linear-gradient(135deg, #065f46, #10b981);
 }
 
 /* ===============================
    PRAYER HISTORY
 ================================ */
 
-#history-list{
-  margin-top:10px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+#history-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-#history-list div{
-  padding:10px;
-  background:#f2e1ce;
-  border-left:4px solid #1b5e20;
-  border-radius:6px;
-  font-size:14px;
+#history-list div {
+  padding: 10px;
+  background: #f2e1ce;
+  border-left: 4px solid #1b5e20;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
-body.dark-mode #history-list div{
-  background:#1e293b;
-  border-left:4px solid #10b981;
+body.dark-mode #history-list div {
+  background: #1e293b;
+  border-left: 4px solid #10b981;
 }
-
 
 /* ===============================
    ANALYTICS
 ================================ */
 
-.analytics-container{
-  margin-top:10px;
+.analytics-container {
+  margin-top: 10px;
 }
 
-.analytics-bar{
-  width:100%;
-  height:15px;
-  background:#eee;
-  border-radius:10px;
-  overflow:hidden;
-  margin-top:8px;
+.analytics-bar {
+  width: 100%;
+  height: 15px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
 }
 
-.analytics-fill{
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,#1b5e20,#2e7d32);
+.analytics-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #1b5e20, #2e7d32);
 }
 
-body.dark-mode .analytics-bar{
-  background:#334155;
+body.dark-mode .analytics-bar {
+  background: #334155;
 }
 
-body.dark-mode .analytics-fill{
-  background:linear-gradient(90deg,#10b981,#065f46);
+body.dark-mode .analytics-fill {
+  background: linear-gradient(90deg, #10b981, #065f46);
 }
-
 
 /* ===============================
    ADHAN ALERT
 ================================ */
 
-.adhan-alert{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:#1b5e20;
-  color:white;
-  padding:12px 18px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-  font-weight:bold;
-  z-index:9999;
+.adhan-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #1b5e20;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  z-index: 9999;
 }
 
-#history-heatmap{
-  display:grid;
+#history-heatmap {
+  display: grid;
   grid-template-columns: repeat(10, 22px);
-  gap:6px;
-  margin-top:15px;
-  justify-content:center;
+  gap: 6px;
+  margin-top: 15px;
+  justify-content: center;
 }
 
-.day-box{
-  width:22px;
-  height:22px;
-  border-radius:4px;
-  background:#eee;
-  transition:0.2s;
+.day-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #eee;
+  transition: 0.2s;
 }
 
-.day-box:hover{
-  transform:scale(1.15);
+.day-box:hover {
+  transform: scale(1.15);
 }
-
 
 /* ===============================
     STOP ADHAN BUTTON
 ================================ */
 
-#stop-adhan-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  padding:10px 15px;
-  background:#b91c1c;
-  color:white;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  display:none; /* hidden by default */
-  z-index:9999;
+#stop-adhan-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  z-index: 9999;
 }
 
-#stop-adhan-btn:hover{
-  background:#7f1d1d;
+#stop-adhan-btn:hover {
+  background: #7f1d1d;
 }
 
 /* ===============================
@@ -562,21 +560,21 @@ body.dark-mode .analytics-fill{
 .sound-panel {
   position: fixed;
   bottom: 20px;
-  right: 20px;   /* right side (better UX) */
+  right: 20px; /* right side (better UX) */
   z-index: 9999;
 }
 
 /* Stop Button Style */
 .sound-panel button {
   padding: 10px 18px;
-  background: #dc2626;   /* red */
+  background: #dc2626; /* red */
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease;
 }
 
@@ -584,4 +582,56 @@ body.dark-mode .analytics-fill{
 .sound-panel button:hover {
   background: #991b1b;
   transform: scale(1.05);
+}
+
+/* ===============================
+   MOBILE RESPONSIVE FIX
+================================ */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .main-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  #live-time {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .mark-btn {
+    width: 100%;
+  }
+
+  #prayers li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #prayers li small {
+    margin-top: 5px;
+  }
 }
